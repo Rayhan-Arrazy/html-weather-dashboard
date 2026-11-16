@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Real-time weather dashboard with 3-day forecasts for multiple cities." />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.7.9/dist/axios.min.js" defer></script>
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">⛅</span>
+        <div>
+          <h1>Weather Dashboard</h1>
+          <p class="subtitle">Real-time conditions &amp; 3-day forecast</p>
+        </div>
+      </div>
+
+      <div class="header-controls">
+        <div class="unit-toggle" role="group" aria-label="Temperature unit">
+          <button type="button" class="unit-btn" data-unit="metric" aria-pressed="true">°C</button>
+          <button type="button" class="unit-btn" data-unit="imperial" aria-pressed="false">°F</button>
+        </div>
+        <button type="button" id="theme-toggle" class="icon-btn" aria-label="Toggle color theme" title="Toggle theme">
+          <span class="theme-icon theme-icon-light" aria-hidden="true">☾</span>
+          <span class="theme-icon theme-icon-dark" aria-hidden="true">☀</span>
+        </button>
+      </div>
+    </header>
+
+    <section class="toolbar" aria-label="City search">
+      <form id="search-form" class="search-form" autocomplete="off">
+        <input
+          type="search"
+          id="search-input"
+          class="search-input"
+          placeholder="Search city (e.g. Paris)"
+          aria-label="Search city"
+          required
+        />
+        <button type="submit" id="search-btn" class="btn btn-primary">
+          <span class="btn-label">Search</span>
+          <span class="btn-spinner" aria-hidden="true"></span>
+        </button>
+        <button type="button" id="location-btn" class="btn btn-ghost">
+          <span class="btn-label">📍 My location</span>
+          <span class="btn-spinner" aria-hidden="true"></span>
+        </button>
+      </form>
+      <p id="status-message" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <main>
+      <div id="initial-loader" class="initial-loader" hidden>
+        <span class="spinner spinner-lg" aria-hidden="true"></span>
+        <p>Loading weather data…</p>
+      </div>
+
+      <div id="empty-state" class="empty-state" hidden>
+        <span class="empty-icon" aria-hidden="true">🌍</span>
+        <h2>No cities yet</h2>
+        <p>Search for a city or use your current location to get started.</p>
+      </div>
+
+      <section id="city-grid" class="city-grid" aria-label="Cities"></section>
+    </main>
+
+    <footer class="footer">
+      Data by <a href="https://openweathermap.org/" target="_blank" rel="noopener noreferrer">OpenWeatherMap</a>
+    </footer>
+  </div>
+</body>
+</html>
