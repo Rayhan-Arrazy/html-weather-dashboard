@@ -1,6 +1,12 @@
 # Weather Dashboard
 
-A lightweight, zero-build weather dashboard built with vanilla HTML, CSS, and JavaScript. Search for cities to see real-time conditions and a 3-day forecast, all in a responsive, themeable grid.
+A lightweight, zero-build weather dashboard built with vanilla HTML, CSS, and JavaScript. Search for cities to see real-time conditions and a 3-day forecast, all in a responsive, themeable grid that works on both desktop and mobile.
+
+## Screenshots
+
+| Desktop | Mobile |
+| :-----: | :----: |
+| <img src="https://github.com/user-attachments/assets/163c08b3-17ac-4170-b209-376c4024a77d" alt="Weather Dashboard desktop view" width="640"> | <img src="https://github.com/user-attachments/assets/1c2116bf-6c29-4acd-a8b6-ec9e9f5420e3" alt="Weather Dashboard mobile view" width="220"> |
 
 ## Features
 
@@ -12,7 +18,8 @@ A lightweight, zero-build weather dashboard built with vanilla HTML, CSS, and Ja
 - 3-day forecast for every city
 - Skeleton loaders, per-card error states with retry, and an empty state
 - Persists cities, unit, and theme in `localStorage`
-- Responsive layout with accessibility touches (ARIA labels, live status, reduced-motion support)
+- Fully responsive layout, from wide desktop grids to a single-column mobile view
+- Accessibility touches (ARIA labels, live status, reduced-motion support)
 
 ## Tech Stack
 
